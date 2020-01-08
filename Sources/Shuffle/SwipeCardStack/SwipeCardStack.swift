@@ -41,7 +41,7 @@ open class SwipeCardStack: UIView, SwipeCardDelegate {
     
     var visibleCards: [SwipeCard] = []
     
-    var topCard: SwipeCard? {
+    public var topCard: SwipeCard? {
         return visibleCards.first
     }
     
