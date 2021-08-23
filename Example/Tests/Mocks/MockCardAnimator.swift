@@ -56,4 +56,8 @@ class MockCardAnimator: CardAnimatable {
   func removeAllAnimations(on card: SwipeCard) {
     removeAllAnimationsCalled = true
   }
+
+  func swipeDuration(_ card: SwipeCard, direction: SwipeDirection, forced: Bool) -> TimeInterval {
+    0
+  }
 }

@@ -34,6 +34,7 @@ protocol CardAnimatable {
                     forced: Bool,
                     completion: ((Bool) -> Void)?)
   func removeAllAnimations(on card: SwipeCard)
+  func swipeDuration(_ card: SwipeCard, direction: SwipeDirection, forced: Bool) -> TimeInterval
 }
 
 class CardAnimator: CardAnimatable {

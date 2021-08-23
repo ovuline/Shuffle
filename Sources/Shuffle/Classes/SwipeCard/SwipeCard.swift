@@ -218,6 +218,8 @@ open class SwipeCard: SwipeView {
 
   func swipeAction(direction: SwipeDirection, forced: Bool) {
     isUserInteractionEnabled = false
+    let duration = animator.swipeDuration(self, direction: direction, forced: forced)
+    delegate?.cardWillAnimateSwipe(self, withDuration: duration)
     animator.animateSwipe(on: self,
                           direction: direction,
                           forced: forced) { [weak self] finished in
