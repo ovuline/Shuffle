@@ -185,17 +185,17 @@ open class SwipeCardStack: UIView, SwipeCardDelegate, UIGestureRecognizerDelegat
   public func swipe(_ direction: SwipeDirection, animated: Bool) {
     if !isEnabled { return }
 
-    if animated {
-      topCard?.swipe(direction: direction)
-    } else {
-      topCard?.removeFromSuperview()
-    }
-
     if let topCard = topCard {
       swipeAction(topCard: topCard,
                   direction: direction,
                   forced: true,
                   animated: animated)
+
+      if animated {
+        topCard.swipe(direction: direction)
+      } else {
+        topCard.removeFromSuperview()
+      }
     }
   }
 
